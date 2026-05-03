@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Azratul Al Zahra | Creative Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-light: linear-gradient(135deg, #f7cac9 0%, #92a8d1 50%, #c5b9e2 100%);
+      --text-primary: #1a1a2e;
+      --text-secondary: #2d1b4e;
+      --text-muted: #4a3b6b;
+      --card-bg: #ffffff;
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --accent: #e88d9a;
+      --accent-dark: #d47a88;
+    }
+
+    body.dark {
+      --bg-light: linear-gradient(135deg, #1e1e3a 0%, #2d1b4e 50%, #1a2a4a 100%);
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --card-bg: #1e1e32;
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      --accent: #ffb7c5;
+      --accent-dark: #f7cac9;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      background-attachment: fixed;
+      transition: all 0.3s ease;
+      overflow-x: hidden;
+      color: var(--text-primary);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 60px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    body.dark .navbar {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(135deg, #e88d9a, #6b8cbf);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      padding: 0.4rem 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--accent);
+    }
+
+    .nav-controls {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .nav-btn {
+      background: rgba(128, 128, 128, 0.15);
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      color: var(--text-primary);
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* ========== HERO SECTION HOME ========== */
+    .hero {
+      text-align: center;
+      padding: 3rem 0 4rem;
+    }
+
+    /* ===== ENHANCED HI, I'M BADGE ===== */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #e88d9a, #c5b9e2);
+      padding: 0.6rem 2rem;
+      border-radius: 80px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1.8rem;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 25px rgba(232, 141, 154, 0.4);
+      animation: glowPulse 2s ease-in-out infinite;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .hero-badge:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(232, 141, 154, 0.6);
+    }
+
+    /* Sparkle animation on badge */
+    @keyframes glowPulse {
+      0% {
+        box-shadow: 0 8px 25px rgba(232, 141, 154, 0.3);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 15px 35px rgba(232, 141, 154, 0.6);
+        transform: scale(1.02);
+      }
+      100% {
+        box-shadow: 0 8px 25px rgba(232, 141, 154, 0.3);
+        transform: scale(1);
+      }
+    }
+
+    /* Sparkle stars around badge */
+    .hero-badge::before {
+      content: "✦";
+      position: relative;
+      animation: sparkle 1.5s ease-in-out infinite;
+      font-size: 1rem;
+    }
+
+    .hero-badge::after {
+      content: "✦";
+      position: relative;
+      animation: sparkle 1.5s ease-in-out infinite 0.5s;
+      font-size: 1rem;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.5; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(135deg, #1a1a2e, #6b4c8a, #2d1b4e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    body.dark .hero h1 {
+      background: linear-gradient(135deg, #fff, #f7cac9, #92a8d1, #e8c39e);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .hero-tagline i {
+      color: var(--accent);
+      margin-right: 6px;
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      max-width: 550px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .explore-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: none;
+      border: 2px solid var(--accent);
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .explore-btn:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-3px);
+      gap: 0.8rem;
+    }
+
+    /* ========== PAGE CONTENT ========== */
+    .page-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .page-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--text-primary);
+    }
+
+    .section-title i {
+      color: var(--accent);
+      margin-right: 0.5rem;
+    }
+
+    /* ========== ABOUT PAGE STYLES ========== */
+    .about-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .profile-img-wrapper-about {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-img-about {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-img-about:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 992px) {
+      .profile-img-wrapper-about { width: 220px; height: 220px; }
+    }
+    @media (max-width: 768px) {
+      .profile-img-wrapper-about { width: 160px; height: 160px; }
+    }
+    @media (max-width: 480px) {
+      .profile-img-wrapper-about { width: 140px; height: 140px; }
+    }
+
+    .floating { animation: float 3s ease-in-out infinite; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .about-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .about-social-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(128, 128, 128, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    body.dark .about-social-icon {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .about-social-icon:hover {
+      background: linear-gradient(135deg, #e88d9a, #7c9ecf);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .about-content {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 2rem;
+    }
+
+    .about-text {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .about-text p {
+      margin-bottom: 1rem;
+    }
+
+    .quote {
+      font-style: italic;
+      border-left: 4px solid var(--accent);
+      padding-left: 1.5rem;
+      margin-top: 1.5rem;
+      color: var(--accent-dark);
+      font-weight: 500;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .info-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 1.8rem;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .info-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .info-card h3 i {
+      color: var(--accent);
+    }
+
+    .timeline-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-title {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .timeline-date {
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin: 0.2rem 0;
+    }
+
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .skill-item {
+      width: 100%;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-name {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-name i {
+      color: var(--accent);
+      font-size: 0.9rem;
+      width: 20px;
+    }
+
+    .skill-percent {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .skill-bar-bg {
+      background: rgba(128, 128, 128, 0.2);
+      height: 8px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+      height: 100%;
+      border-radius: 10px;
+      width: 0%;
+      transition: width 1s ease-in-out;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+    }
+
+    .project-info {
+      padding: 1.5rem;
+    }
+
+    .project-category {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .project-info p {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .project-tech span {
+      background: rgba(128, 128, 128, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .project-link:hover {
+      gap: 0.8rem;
+    }
+
+    .hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .hobby-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 1.8rem;
+      text-align: center;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .hobby-card i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .hobby-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .hobby-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(128, 128, 128, 0.2);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #e88d9a, #7c9ecf);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      z-index: 1000;
+      transform: translateX(400px);
+      transition: transform 0.3s ease;
+    }
+
+    .toast.show {
+      transform: translateX(0);
+    }
+
+    @media (max-width: 992px) {
+      .container { padding: 1.5rem; }
+      .hero h1 { font-size: 3rem; }
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .navbar {
+        flex-direction: column;
+        border-radius: 30px;
+        padding: 1rem;
+      }
+      .nav-menu { justify-content: center; gap: 1.2rem; }
+      .nav-controls { justify-content: center; }
+      .hero { padding: 2rem 0; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero-tagline { font-size: 1rem; }
+      .hero-desc { font-size: 0.9rem; }
+      .hero-badge { padding: 0.4rem 1.5rem; font-size: 0.8rem; }
+      .section-title { font-size: 1.5rem; }
+      .about-content { padding: 1.5rem; }
+      .info-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .hobbies-grid { grid-template-columns: 1fr; }
+      .about-social-icon { width: 38px; height: 38px; font-size: 1rem; }
+      .toast { bottom: 20px; right: 20px; left: 20px; transform: translateY(100px); text-align: center; }
+      .toast.show { transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero-badge { padding: 0.3rem 1.2rem; font-size: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar" data-aos="fade-down">
+      <div class="logo"><i class="fas fa-star"></i> Azra.profil</div>
+      <div class="nav-menu" id="navMenu">
+        <a class="nav-link active" data-page="home" id="navHome">Beranda</a>
+        <a class="nav-link" data-page="about" id="navAbout">Tentang Saya</a>
+        <a class="nav-link" data-page="projects" id="navProjects">Proyek</a>
+        <a class="nav-link" data-page="interests" id="navInterests">Pilihanku</a>
+      </div>
+      <div class="nav-controls">
+        <button class="nav-btn" id="themeToggle"><i class="fas fa-moon"></i> <span id="themeText">Dark Mode</span></button>
+        <button class="nav-btn" id="langToggle"><i class="fas fa-globe"></i> <span id="langText">English</span></button>
+      </div>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page-content active">
+      <div class="hero" data-aos="fade-up">
+        <div class="hero-badge"> HI, I'M </div>
+        <h1>Azratul Al Zahra</h1>
+        <div class="hero-tagline" id="heroTagline"><i class="fas fa-heart"></i> Informatics Engineering Student</div>
+        <div class="hero-desc" id="heroDesc">Seorang mahasiswi Teknik Informatika dengan minat besar di bidang teknologi, seni, dan kreativitas.</div>
+        <button class="explore-btn" onclick="switchPage('about')" id="exploreBtn">Explore My Work ↓</button>
+      </div>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="aboutPage" class="page-content">
+      <h2 class="section-title" id="aboutTitle"><i class="fas fa-user-astronaut"></i> Tentang Saya</h2>
+      
+      <div class="about-hero">
+        <div class="profile-img-wrapper-about floating">
+          <img src="img/azra.jpeg" alt="Azratul Al Zahra" class="profile-img-about" id="profileImgAbout">
+        </div>
+        
+        <div class="about-social">
+          <a href="https://instagram.com/azratulalzahra" target="_blank" class="about-social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/Azra-dev79" target="_blank" class="about-social-icon"><i class="fab fa-github"></i></a>
+          <a href="https://x.com/azratulalzahra" target="_blank" class="about-social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/azratul-al-zahra-a863bb401" target="_blank" class="about-social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/6285189442158" target="_blank" class="about-social-icon"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:azratulalzahra@gmail.com" class="about-social-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="about-content" data-aos="fade-up">
+        <div class="about-text">
+          <p id="aboutText1">Halo! Saya Azratul Al Zahra, seorang mahasiswi Teknik Informatika di Universitas Jabal Ghafur. Saya lahir di Malaysia pada 8 Mei 2006. Meskipun sekarang berkuliah di bidang IT, saya tetap memelihara keahlian pada dunia fashion dan desain.</p>
+          <p id="aboutText2">Saya percaya bahwa teknologi dan seni bisa berjalan beriringan dengan indah — menggabungkan logika kode dengan estetika desain. Di sela-sela coding, saya menyalurkan kreativitas saya melalui desain dan moodboard aesthetic, dan menjahit.</p>
+          <div class="quote" id="quoteText">"Memadukan estetika visual dengan logika teknologi — setiap karya adalah cerita yang ingin disampaikan."</div>
+        </div>
+      </div>
+
+      <div class="info-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="info-card">
+          <h3><i class="fas fa-graduation-cap"></i> <span id="educationTitle">Perjalanan Pendidikan</span></h3>
+          <div class="timeline-item">
+            <div class="timeline-title" id="sdTitle">SD Negeri 1 Bambi</div>
+            <div class="timeline-date">2012 - 2018</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-title" id="smpTitle">MTs Negeri 5 Pidie</div>
+            <div class="timeline-date">2018 - 2021</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-title" id="smkTitle">SMK Negeri 1 Sigli - Desain Fashion</div>
+            <div class="timeline-date">2021 - 2024</div>
+            <div class="timeline-desc" id="smkDesc">Jurusan Desain Fashion · pembuatan pola, ilustrasi busana, produksi garment</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-title" id="uniTitle">Universitas Jabal Ghafur (UNIGHA)</div>
+            <div class="timeline-date">2024 - sekarang | S1 Teknik Informatika</div>
+            <div class="timeline-desc" id="uniDesc">Fokus pada creative coding & interactive media</div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h3><i class="fas fa-cogs"></i> <span id="skillsTitle">Keahlian Saya</span></h3>
+          <div class="skills-container" id="skillsList"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTS PAGE -->
+    <div id="projectsPage" class="page-content">
+      <h2 class="section-title" id="projectsTitle"><i class="fas fa-laptop-code"></i> Proyek Saya</h2>
+      <div class="projects-grid" id="projectsList"></div>
+    </div>
+
+    <!-- INTERESTS PAGE -->
+    <div id="interestsPage" class="page-content">
+      <h2 class="section-title" id="interestsTitle"><i class="fas fa-heart"></i> Pilihanku</h2>
+      <div class="hobbies-grid" id="interestsGrid"></div>
+    </div>
+
+    <div class="footer" data-aos="fade-up">
+      <p id="footerText">Berkarya dengan niat, berkembang seiring waktu — Azratul Al Zahra</p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">✨ Opening link...</div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true, offset: 100 });
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    // Projects Data dengan imageUrl (bisa pakai foto)
+const projectsData = [
+  {
+    name: "VoltRide Aceh",
+    category: "WEB DEVELOPMENT",
+    descriptionId: "Platform transportasi online pertama di Aceh dengan kendaraan listrik. Membantu pengguna mencari layanan perjalanan dengan mudah melalui tampilan sederhana dan user‑friendly.",
+    descriptionEn: "The first online transportation platform in Aceh with electric vehicles. Helps users find travel services easily with a simple and user‑friendly interface.",
+    tech: ["Responsive Design", "UI/UX", "HTML, CSS, JS"],
+    demoUrl: "https://azra-dev79.github.io/VoltRide-Aceh/",
+   imageUrl: "img/voltride - Copy.jpeg"  // <-- Ganti dengan path foto Anda
+  },
+  {
+    name: "ThriftFit",
+    category: "WEB DEVELOPMENT",
+    descriptionId: "Platform digital fashion thrift yang menggabungkan marketplace, komunitas, dan inspirasi OOTD. Konsep visual yang fresh dan modern.",
+    descriptionEn: "A digital thrift fashion platform that combines marketplace, community, and OOTD inspiration. Fresh and modern visual concept.",
+    tech: ["Marketplace", "Community", "HTML, CSS, JS"],
+    demoUrl: "https://azra-dev79.github.io/thriftfit1/",
+    imageUrl: "img/logo_tf.png"  // <-- Ganti dengan path foto Anda
+  }
+];
+
+    // Interests Data
+    const interestsData = [
+  { 
+    icon: "fa-palette", 
+    titleId: "Desain Grafis", 
+    titleEn: "Graphic Design", 
+    descId: "Koleksi karya desain dan ilustrasi digital", 
+    descEn: "Collection of digital design and illustration works", 
+    link: "https://www.behance.net/search/projects/graphic%20design" 
+  },
+  { 
+    icon: "fa-tshirt", 
+    titleId: "Fashion & Styling", 
+    titleEn: "Fashion & Styling", 
+    descId: "Inspirasi tren fashion dan styling terkini", 
+    descEn: "Latest fashion trends and styling inspiration", 
+    link: "https://www.pinterest.com/search/pins/?q=fashion%20style%20inspiration" 
+  },
+  { 
+    icon: "fa-headphones", 
+    titleId: "K-pop & Indie Music", 
+    titleEn: "K-pop & Indie Music", 
+    descId: "Playlist musik favorit untuk menemani harimu", 
+    descEn: "Favorite music playlist to accompany your day", 
+    link: "https://open.spotify.com/playlist/37i9dQZF1E8KS9AMpWKcZt" 
+  },
+  { 
+    icon: "fa-mobile-alt", 
+    titleId: "UI/UX Design", 
+    titleEn: "UI/UX Design", 
+    descId: "Inspirasi desain antarmuka modern", 
+    descEn: "Modern interface design inspiration", 
+    link: "https://dribbble.com/tags/ui_design" 
+  },
+  { 
+    icon: "fa-language", 
+    titleId: "Bahasa Korea, Jepang, Inggris", 
+    titleEn: "Korean, Japanese, English", 
+    descId: "Tutorial belajar bahasa asing", 
+    descEn: "Foreign language learning tutorials", 
+    link: "https://youtube.com/playlist?list=PLpt3EnQbQGHajBZUw8fgeqX7amk29UB3K&si=_gnHJ6WosZMTznt3" 
+  },
+  { 
+    icon: "fa-pen-fancy", 
+    titleId: "Estetik & Desain Visual", 
+    titleEn: "Aesthetic & Visual Design", 
+    descId: "Inspirasi catatan estetik dan desain visual", 
+    descEn: "Aesthetic notes and visual design inspiration", 
+    link: "https://id.pinterest.com/search/pins/?q=Aesthetic%20%26%20designs%20visual" 
+  }
+];
+
+
+    // Skills Data
+    const skillsData = {
+      id: [
+        { name: "Desain Grafis", percent: 75, icon: "fa-palette" },
+        { name: "Fashion Design", percent: 80, icon: "fa-tshirt" },
+        { name: "Menjahit & Pattern Making", percent: 90, icon: "fa-cut" },
+        { name: "UI/UX Design", percent: 75, icon: "fa-mobile-alt" },
+        { name: "Microsoft Office", percent: 85, icon: "fa-file-alt" },
+      ],
+      en: [
+        { name: "Graphic Design", percent: 75, icon: "fa-palette" },
+        { name: "Fashion Design", percent: 80, icon: "fa-tshirt" },
+        { name: "Sewing & Pattern Making", percent: 90, icon: "fa-cut" },
+        { name: "UI/UX Design", percent: 75, icon: "fa-mobile-alt" },
+        { name: "Microsoft Office", percent: 85, icon: "fa-file-alt" },
+      ]
+    };
+
+    const navData = {
+      id: { home: "Beranda", about: "Tentang Saya", projects: "Proyek", interests: "Pilihanku" },
+      en: { home: "Home", about: "About Me", projects: "Projects", interests: "My Picks" }
+    };
+
+    function buildProjectsList(lang) {
+  const container = document.getElementById('projectsList');
+  container.innerHTML = '';
+  
+  projectsData.forEach(project => {
+    const description = lang === 'id' ? project.descriptionId : project.descriptionEn;
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    
+    // Cek apakah ada imageUrl, jika ada pakai gambar, jika tidak pakai icon default
+    const previewContent = project.imageUrl 
+      ? `<img src="${project.imageUrl}" alt="${project.name}" style="width:100%; height:100%; object-fit:cover;">`
+      : `<i class="fas fa-code" style="font-size: 3rem; color: white;"></i>`;
+    
+    card.innerHTML = `
+      <div class="project-img">
+        ${previewContent}
+      </div>
+      <div class="project-info">
+        <div class="project-category">${project.category}</div>
+        <h3>${project.name}</h3>
+        <p>${description}</p>
+        <div class="project-tech">
+          ${project.tech.map(t => `<span>${t}</span>`).join('')}
+        </div>
+        <a href="${project.demoUrl}" target="_blank" class="project-link">${lang === 'id' ? 'Lihat Proyek →' : 'View Project →'}</a>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+    function buildInterestsGrid(lang) {
+      const container = document.getElementById('interestsGrid');
+      container.innerHTML = '';
+      
+      interestsData.forEach(interest => {
+        const title = lang === 'id' ? interest.titleId : interest.titleEn;
+        const desc = lang === 'id' ? interest.descId : interest.descEn;
+        const card = document.createElement('div');
+        card.className = 'hobby-card';
+        card.onclick = () => {
+          showToast(`✨ ${lang === 'id' ? 'Membuka' : 'Opening'} ${title}...`);
+          window.open(interest.link, '_blank');
+        };
+        card.innerHTML = `
+          <i class="fas ${interest.icon}"></i>
+          <h4>${title}</h4>
+          <p>${desc}</p>
+          <span style="font-size:0.7rem; color:var(--accent);">${lang === 'id' ? 'Lihat →' : 'View →'}</span>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function updateSkills(lang) {
+      const skillsList = document.getElementById('skillsList');
+      skillsList.innerHTML = '';
+      
+      skillsData[lang].forEach(skill => {
+        const skillDiv = document.createElement('div');
+        skillDiv.className = 'skill-item';
+        skillDiv.innerHTML = `
+          <div class="skill-info">
+            <span class="skill-name"><i class="fas ${skill.icon}"></i> ${skill.name}</span>
+            <span class="skill-percent">${skill.percent}%</span>
+          </div>
+          <div class="skill-bar-bg">
+            <div class="skill-bar-fill" style="width: ${skill.percent}%"></div>
+          </div>
+        `;
+        skillsList.appendChild(skillDiv);
+      });
+    }
+
+    function updateNavMenu(lang) {
+      const nav = navData[lang];
+      document.getElementById('navHome').textContent = nav.home;
+      document.getElementById('navAbout').textContent = nav.about;
+      document.getElementById('navProjects').textContent = nav.projects;
+      document.getElementById('navInterests').textContent = nav.interests;
+    }
+
+    // Dark Mode
+    let isDark = localStorage.getItem('darkMode') === 'true';
+    const themeToggle = document.getElementById('themeToggle');
+    const themeTextSpan = document.getElementById('themeText');
+    
+    function applyTheme() {
+      if (isDark) {
+        document.body.classList.add('dark');
+        themeTextSpan.innerText = 'Light Mode';
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+      } else {
+        document.body.classList.remove('dark');
+        themeTextSpan.innerText = 'Dark Mode';
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+      }
+    }
+    applyTheme();
+    themeToggle.addEventListener('click', () => {
+      isDark = !isDark;
+      localStorage.setItem('darkMode', isDark);
+      applyTheme();
+    });
+
+    // Bilingual Content
+    const content = {
+      id: {
+        heroTagline: '<i class="fas fa-heart"></i> Mahasiswi Teknik Informatika',
+        heroDesc: 'Seorang mahasiswi Teknik Informatika dengan minat besar di bidang teknologi, seni, dan kreativitas.',
+        exploreBtn: 'Explore My Work ↓',
+        aboutTitle: '<i class="fas fa-user-astronaut"></i> Tentang Saya',
+        aboutText1: 'Halo! Saya Azratul Al Zahra, seorang mahasiswi Teknik Informatika di Universitas Jabal Ghafur. Saya lahir di Malaysia pada 8 Mei 2006. Meskipun sekarang berkuliah di bidang IT, saya tetap memelihara kecintaan pada dunia fashion dan desain.',
+        aboutText2: 'Saya percaya bahwa teknologi dan seni bisa berjalan beriringan dengan indah — menggabungkan logika kode dengan estetika desain. Di sela-sela coding, saya menyalurkan kreativitas saya melalui desain grafis, ilustrasi digital, dan menjahit.',
+        quoteText: '"Memadukan estetika visual dengan logika teknologi — setiap karya adalah cerita yang ingin disampaikan."',
+        educationTitle: 'Perjalanan Pendidikan',
+        sdTitle: 'SD Negeri 1 Bambi',
+        smpTitle: 'MTs Negeri 5 Pidie',
+        smkTitle: 'SMK Negeri 1 Sigli - Desain Fashion',
+        smkDesc: 'Jurusan Desain Fashion · pembuatan pola, ilustrasi busana, produksi garment',
+        uniTitle: 'Universitas Jabal Ghafur (UNIGHA)',
+        uniDesc: 'Fokus pada creative coding & interactive media',
+        skillsTitle: 'Keahlian Saya',
+        projectsTitle: '<i class="fas fa-laptop-code"></i> Proyek Saya',
+        interestsTitle: '<i class="fas fa-heart"></i> Pilihanku',
+        footerText: 'Berkarya dengan niat, berkembang seiring waktu — Azratul Al Zahra'
+      },
+      en: {
+        heroTagline: '<i class="fas fa-heart"></i> Informatics Engineering Student',
+        heroDesc: 'An Informatics Engineering student,with a strong interest in technology, art, and creativity.',
+        exploreBtn: 'Explore My Work ↓',
+        aboutTitle: '<i class="fas fa-user-astronaut"></i> About Me',
+        aboutText1: 'Hello! I am Azratul Al Zahra, an Informatics Engineering student at Jabal Ghafur University. I was born in Malaysia on May 8, 2006. Although I am now studying IT, I still maintain my love for fashion and design.',
+        aboutText2: 'I believe that technology and art can go hand in hand beautifully — combining code logic with design aesthetics. In between coding, I channel my creativity through graphic design, digital illustration, and sewing.',
+        quoteText: '"Combining visual aesthetics with technology logic — every work is a story to tell."',
+        educationTitle: 'Education Journey',
+        sdTitle: 'SD Negeri 1 Bambi',
+        smpTitle: 'MTs Negeri 5 Pidie',
+        smkTitle: 'SMK Negeri 1 Sigli - Fashion Design',
+        smkDesc: 'Fashion Design major · pattern making, fashion illustration, garment production',
+        uniTitle: 'Jabal Ghafur University (UNIGHA)',
+        uniDesc: 'Focus on creative coding & interactive media',
+        skillsTitle: 'My Skills',
+        projectsTitle: '<i class="fas fa-laptop-code"></i> My Projects',
+        interestsTitle: '<i class="fas fa-heart"></i> My Picks',
+        footerText: 'Create with intention, grow with time — Azratul Al Zahra'
+      }
+    };
+
+    // Page Navigation
+    const navLinks = document.querySelectorAll('.nav-link');
+    const pages = {
+      home: document.getElementById('homePage'),
+      about: document.getElementById('aboutPage'),
+      projects: document.getElementById('projectsPage'),
+      interests: document.getElementById('interestsPage')
+    };
+
+    function switchPage(pageId) {
+      Object.keys(pages).forEach(key => {
+        pages[key].classList.remove('active');
+      });
+      pages[pageId].classList.add('active');
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.dataset.page === pageId) {
+          link.classList.add('active');
+        }
+      });
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const pageId = link.dataset.page;
+        if (pageId) switchPage(pageId);
+      });
+    });
+
+    window.switchPage = switchPage;
+
+    let currentLang = localStorage.getItem('language') || 'id';
+    const langToggle = document.getElementById('langToggle');
+    const langTextSpan = document.getElementById('langText');
+
+    function applyLanguage(lang) {
+      const t = content[lang];
+      
+      updateNavMenu(lang);
+      document.getElementById('heroTagline').innerHTML = t.heroTagline;
+      document.getElementById('heroDesc').innerHTML = t.heroDesc;
+      document.getElementById('exploreBtn').innerHTML = t.exploreBtn;
+      document.getElementById('aboutTitle').innerHTML = t.aboutTitle;
+      document.getElementById('aboutText1').innerHTML = t.aboutText1;
+      document.getElementById('aboutText2').innerHTML = t.aboutText2;
+      document.getElementById('quoteText').innerHTML = t.quoteText;
+      document.getElementById('educationTitle').innerHTML = t.educationTitle;
+      document.getElementById('sdTitle').innerHTML = t.sdTitle;
+      document.getElementById('smpTitle').innerHTML = t.smpTitle;
+      document.getElementById('smkTitle').innerHTML = t.smkTitle;
+      document.getElementById('smkDesc').innerHTML = t.smkDesc;
+      document.getElementById('uniTitle').innerHTML = t.uniTitle;
+      document.getElementById('uniDesc').innerHTML = t.uniDesc;
+      document.getElementById('skillsTitle').innerHTML = t.skillsTitle;
+      document.getElementById('projectsTitle').innerHTML = t.projectsTitle;
+      document.getElementById('interestsTitle').innerHTML = t.interestsTitle;
+      document.getElementById('footerText').innerHTML = t.footerText;
+      
+      updateSkills(lang);
+      buildProjectsList(lang);
+      buildInterestsGrid(lang);
+      
+      langTextSpan.innerText = lang === 'id' ? 'English' : 'Indonesia';
+      langToggle.innerHTML = lang === 'id' ? '<i class="fas fa-globe"></i> English' : '<i class="fas fa-globe"></i> Indonesia';
+    }
+
+    applyLanguage(currentLang);
+    langToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      localStorage.setItem('language', currentLang);
+      applyLanguage(currentLang);
+    });
+  </script>
+</body>
+</html>
