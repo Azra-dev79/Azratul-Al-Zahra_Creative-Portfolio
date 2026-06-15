@@ -490,7 +490,7 @@
       <div class="skills-modern" id="skillsModernList"></div>
     </div>
     
-    <!-- MOTTO HIDUP - DITENGAH -->
+    <!-- MOTTO HIDUP -->
     <div class="motto-center" data-aos="fade-up">
       <div class="motto-text-center" id="mottoText">"Berkarya dengan hati, berkembang bersama waktu."</div>
       <div class="motto-author">— Azratul Al Zahra —</div>
@@ -524,6 +524,7 @@
         <div class="locket-info-item"><i class="fas fa-arrow-right"></i> Geser untuk lihat semua</div>
         <div class="locket-info-item"><i class="fas fa-expand-alt"></i> Klik foto untuk perbesar</div>
         <div class="locket-info-item"><i class="fas fa-trash-alt"></i> Hover lalu klik ✖ untuk hapus</div>
+        <div class="locket-info-item"><i class="fas fa-clock"></i> Foto baru muncul di depan</div>
       </div>
     </div>
   </div>
@@ -570,7 +571,7 @@
   }
   function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
   
-  // LOCKET GALLERY
+  // LOCKET GALLERY - FOTO BARU MASUK DI AWAL (UNSHIFT)
   let locketImages = JSON.parse(localStorage.getItem('azra_locket_gallery')) || [];
   
   function renderLocketGallery() {
@@ -603,21 +604,36 @@
         }
       });
     });
+    // Auto scroll ke paling kiri (foto terbaru)
+    const scrollContainer = document.getElementById('locketStoriesAbout');
+    if(scrollContainer) {
+      setTimeout(() => { scrollContainer.scrollLeft = 0; }, 50);
+    }
   }
   
   function addImagesToLocket(files) {
     if(!files.length) return;
+    // Proses setiap file dan tambahkan ke AWAL array (unshift)
+    const newImages = [];
     Array.from(files).forEach(file => {
       if(file.type.startsWith('image/')){
         const reader = new FileReader();
         reader.onload = function(ev) {
-          locketImages.push(ev.target.result);
-          localStorage.setItem('azra_locket_gallery', JSON.stringify(locketImages));
-          renderLocketGallery();
-          showToast(`📸 +1 foto ditambahkan ke Locket`);
+          newImages.push(ev.target.result);
+          // Setelah semua file selesai dibaca, tambahkan ke awal array
+          if(newImages.length === files.length) {
+            // Tambahkan ke AWAL menggunakan spread operator
+            locketImages = [...newImages, ...locketImages];
+            localStorage.setItem('azra_locket_gallery', JSON.stringify(locketImages));
+            renderLocketGallery();
+            showToast(`📸 ${newImages.length} foto ditambahkan ke Locket (terbaru di depan)`);
+          }
         };
         reader.readAsDataURL(file);
-      } else { showToast('Hanya file gambar'); }
+      } else { 
+        showToast('Hanya file gambar'); 
+        newImages.push(null);
+      }
     });
   }
   
