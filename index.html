@@ -3,1117 +3,780 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Azratul Al Zahra | Creative Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Azratul Al Zahra | Elegant Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg-light: linear-gradient(135deg, #f7cac9 0%, #92a8d1 50%, #c5b9e2 100%);
-      --text-primary: #1a1a2e;
-      --text-secondary: #2d1b4e;
-      --text-muted: #4a3b6b;
-      --card-bg: #ffffff;
-      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      --accent: #e88d9a;
-      --accent-dark: #d47a88;
+      --bg-light: #fefaf6;
+      --bg-gradient-light: radial-gradient(circle at 10% 30%, #fff5eb 0%, #fef6ec 100%);
+      --text-primary: #2c2418;
+      --text-secondary: #5a4a3a;
+      --text-muted: #8b7a69;
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --card-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02);
+      --accent: #c17b6e;
+      --accent-light: #e2b4aa;
+      --accent-dark: #aa6b5e;
+      --border-light: rgba(193, 123, 110, 0.15);
+      --gold: #cb9e72;
     }
 
     body.dark {
-      --bg-light: linear-gradient(135deg, #1e1e3a 0%, #2d1b4e 50%, #1a2a4a 100%);
-      --text-primary: #f1f5f9;
-      --text-secondary: #cbd5e1;
-      --text-muted: #94a3b8;
-      --card-bg: #1e1e32;
-      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      --accent: #ffb7c5;
-      --accent-dark: #f7cac9;
+      --bg-light: #18161a;
+      --bg-gradient-light: radial-gradient(circle at 10% 20%, #1e1b1f 0%, #141217 100%);
+      --text-primary: #efe6dd;
+      --text-secondary: #cfc3b8;
+      --text-muted: #a69281;
+      --card-bg: rgba(28, 25, 30, 0.85);
+      --card-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4);
+      --accent: #d99e8f;
+      --accent-light: #b88072;
+      --accent-dark: #c28b7c;
+      --border-light: rgba(217, 158, 143, 0.2);
+      --gold: #cdb28c;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg-light);
-      background-attachment: fixed;
-      transition: all 0.3s ease;
-      overflow-x: hidden;
+      background: var(--bg-gradient-light);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       color: var(--text-primary);
+      overflow-x: hidden;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
+    .container { max-width: 1280px; margin: 0 auto; padding: 2rem 2rem 1rem; }
 
-    /* ========== NAVBAR ========== */
+    /* Navbar */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.8rem 1.5rem;
+      padding: 0.6rem 1.8rem;
       margin-bottom: 2rem;
       flex-wrap: wrap;
       gap: 1rem;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      border-radius: 60px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 250, 240, 0.4);
+      backdrop-filter: blur(16px);
+      border-radius: 100px;
+      border: 1px solid var(--border-light);
     }
+    body.dark .navbar { background: rgba(20, 18, 23, 0.6); }
+    .logo { font-size: 1.6rem; font-weight: 400; font-family: 'Cormorant Garamond', serif; color: var(--accent); }
+    .logo i { margin-right: 6px; color: var(--gold); }
+    .nav-menu { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .nav-link { text-decoration: none; color: var(--text-secondary); font-weight: 450; font-size: 0.85rem; transition: 0.3s; border-bottom: 1px solid transparent; cursor: pointer; }
+    .nav-link:hover, .nav-link.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .nav-controls { display: flex; gap: 0.6rem; }
+    .nav-btn { background: rgba(193, 123, 110, 0.08); border: 1px solid var(--border-light); padding: 0.4rem 1rem; border-radius: 40px; font-size: 0.75rem; font-weight: 500; cursor: pointer; color: var(--text-secondary); }
+    .nav-btn:hover { background: var(--accent); color: white; }
 
-    body.dark .navbar {
-      background: rgba(0, 0, 0, 0.3);
-    }
+    /* Hero Home */
+    .hero { text-align: center; padding: 4rem 0 2rem; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--card-bg); backdrop-filter: blur(8px); padding: 0.4rem 1.6rem; border-radius: 60px; font-size: 0.75rem; font-weight: 500; color: var(--accent); margin-bottom: 2rem; border: 1px solid var(--border-light); }
+    .hero h1 { font-size: 4.8rem; font-weight: 500; font-family: 'Cormorant Garamond', serif; margin-bottom: 0.8rem; }
+    .hero-tagline { font-size: 1rem; color: var(--accent); margin-bottom: 1rem; }
+    .hero-desc { color: var(--text-muted); max-width: 520px; margin: 0 auto 2rem; line-height: 1.7; font-size: 0.9rem; }
+    .explore-btn { display: inline-flex; align-items: center; gap: 0.6rem; background: transparent; border: 1px solid var(--accent); padding: 0.7rem 2rem; border-radius: 40px; font-size: 0.8rem; font-weight: 500; color: var(--accent); cursor: pointer; transition: 0.3s; }
+    .explore-btn:hover { background: var(--accent); color: white; gap: 1rem; }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      font-family: 'Playfair Display', serif;
-      background: linear-gradient(135deg, #e88d9a, #6b8cbf);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
+    /* Feature Grid Home */
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin: 2rem 0; }
+    .feature-card { background: var(--card-bg); backdrop-filter: blur(12px); border-radius: 1.5rem; padding: 1.2rem; text-align: center; border: 1px solid var(--border-light); }
+    .feature-card i { font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; }
 
-    .nav-menu {
-      display: flex;
-      gap: 1.8rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .nav-link {
-      text-decoration: none;
-      color: var(--text-primary);
-      font-weight: 500;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      padding: 0.4rem 0;
-    }
-
-    .nav-link:hover, .nav-link.active {
-      color: var(--accent);
-    }
-
-    .nav-controls {
-      display: flex;
-      gap: 0.8rem;
-    }
-
-    .nav-btn {
-      background: rgba(128, 128, 128, 0.15);
-      border: none;
-      padding: 0.4rem 1rem;
-      border-radius: 30px;
-      color: var(--text-primary);
-      cursor: pointer;
-      font-size: 0.8rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .nav-btn:hover {
-      background: var(--accent);
-      color: white;
-    }
-
-    /* ========== HERO SECTION HOME ========== */
-    .hero {
-      text-align: center;
-      padding: 3rem 0 4rem;
-    }
-
-    /* ===== ENHANCED HI, I'M BADGE ===== */
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #e88d9a, #c5b9e2);
-      padding: 0.6rem 2rem;
-      border-radius: 80px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 1.8rem;
-      letter-spacing: 1px;
-      box-shadow: 0 8px 25px rgba(232, 141, 154, 0.4);
-      animation: glowPulse 2s ease-in-out infinite;
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.4);
-      transition: all 0.3s ease;
-    }
-
-    .hero-badge:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 30px rgba(232, 141, 154, 0.6);
-    }
-
-    /* Sparkle animation on badge */
-    @keyframes glowPulse {
-      0% {
-        box-shadow: 0 8px 25px rgba(232, 141, 154, 0.3);
-        transform: scale(1);
-      }
-      50% {
-        box-shadow: 0 15px 35px rgba(232, 141, 154, 0.6);
-        transform: scale(1.02);
-      }
-      100% {
-        box-shadow: 0 8px 25px rgba(232, 141, 154, 0.3);
-        transform: scale(1);
-      }
-    }
-
-    /* Sparkle stars around badge */
-    .hero-badge::before {
-      content: "✦";
-      position: relative;
-      animation: sparkle 1.5s ease-in-out infinite;
-      font-size: 1rem;
-    }
-
-    .hero-badge::after {
-      content: "✦";
-      position: relative;
-      animation: sparkle 1.5s ease-in-out infinite 0.5s;
-      font-size: 1rem;
-    }
-
-    @keyframes sparkle {
-      0%, 100% { opacity: 0.5; transform: scale(0.8); }
-      50% { opacity: 1; transform: scale(1.2); }
-    }
-
-    .hero h1 {
-      font-size: 4rem;
-      font-weight: 800;
-      font-family: 'Playfair Display', serif;
-      background: linear-gradient(135deg, #1a1a2e, #6b4c8a, #2d1b4e);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 1rem;
-    }
-
-    body.dark .hero h1 {
-      background: linear-gradient(135deg, #fff, #f7cac9, #92a8d1, #e8c39e);
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-
-    .hero-tagline {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
-    }
-
-    .hero-tagline i {
-      color: var(--accent);
-      margin-right: 6px;
-    }
-
-    .hero-desc {
-      color: var(--text-muted);
-      max-width: 550px;
-      margin: 0 auto 2rem;
-      line-height: 1.6;
-    }
-
-    .explore-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: none;
-      border: 2px solid var(--accent);
-      padding: 0.7rem 1.8rem;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--accent);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .explore-btn:hover {
-      background: var(--accent);
-      color: white;
-      transform: translateY(-3px);
-      gap: 0.8rem;
-    }
-
-    /* ========== PAGE CONTENT ========== */
-    .page-content {
-      display: none;
-      animation: fadeIn 0.5s ease;
-    }
-
-    .page-content.active {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: var(--text-primary);
-    }
-
-    .section-title i {
-      color: var(--accent);
-      margin-right: 0.5rem;
-    }
-
-    /* ========== ABOUT PAGE STYLES ========== */
-    .about-hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
-
-    .profile-img-wrapper-about {
-      position: relative;
-      width: 280px;
-      height: 280px;
-      margin-bottom: 1.5rem;
-    }
-
-    .profile-img-about {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--accent);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease;
-    }
-
-    .profile-img-about:hover {
-      transform: scale(1.03);
-    }
-
-    @media (max-width: 992px) {
-      .profile-img-wrapper-about { width: 220px; height: 220px; }
-    }
-    @media (max-width: 768px) {
-      .profile-img-wrapper-about { width: 160px; height: 160px; }
-    }
-    @media (max-width: 480px) {
-      .profile-img-wrapper-about { width: 140px; height: 140px; }
-    }
-
-    .floating { animation: float 3s ease-in-out infinite; }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .about-social {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 1rem 0 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .about-social-icon {
-      width: 42px;
-      height: 42px;
-      background: rgba(128, 128, 128, 0.15);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      color: var(--text-primary);
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-
-    body.dark .about-social-icon {
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-    }
-
-    .about-social-icon:hover {
-      background: linear-gradient(135deg, #e88d9a, #7c9ecf);
-      color: white;
-      transform: translateY(-3px);
-    }
-
-    .about-content {
+    /* LOCKET GALLERY - BEAUTIFUL STORIES STYLE */
+    .locket-fullwidth {
       background: var(--card-bg);
-      border-radius: 24px;
-      padding: 2rem;
-      box-shadow: var(--card-shadow);
-      margin-bottom: 2rem;
-    }
-
-    .about-text {
-      color: var(--text-secondary);
-      line-height: 1.8;
-      font-size: 1rem;
-    }
-
-    .about-text p {
-      margin-bottom: 1rem;
-    }
-
-    .quote {
-      font-style: italic;
-      border-left: 4px solid var(--accent);
-      padding-left: 1.5rem;
-      margin-top: 1.5rem;
-      color: var(--accent-dark);
-      font-weight: 500;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .info-card {
-      background: var(--card-bg);
-      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      border-radius: 32px;
       padding: 1.8rem;
-      box-shadow: var(--card-shadow);
-      transition: transform 0.3s ease;
+      border: 1px solid var(--border-light);
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
     }
-
-    .info-card:hover {
-      transform: translateY(-5px);
+    .locket-fullwidth:hover {
+      box-shadow: 0 20px 35px -15px rgba(193, 123, 110, 0.2);
     }
-
-    .info-card h3 {
+    .locket-fullwidth h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
       gap: 0.8rem;
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
-      color: var(--text-primary);
-    }
-
-    .info-card h3 i {
       color: var(--accent);
     }
-
-    .timeline-item {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(128, 128, 128, 0.15);
-    }
-
-    .timeline-item:last-child {
-      border-bottom: none;
-    }
-
-    .timeline-title {
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .timeline-date {
-      font-size: 0.75rem;
-      color: var(--accent);
-      margin: 0.2rem 0;
-    }
-
-    .timeline-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .skills-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-
-    .skill-item {
-      width: 100%;
-    }
-
-    .skill-info {
+    .locket-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px dashed var(--border-light);
     }
-
-    .skill-name {
+    .upload-locket-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
       font-weight: 600;
-      font-size: 0.85rem;
-      color: var(--text-primary);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(193, 123, 110, 0.3);
     }
-
-    .skill-name i {
-      color: var(--accent);
-      font-size: 0.9rem;
-      width: 20px;
+    .upload-locket-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(193, 123, 110, 0.4);
     }
-
-    .skill-percent {
-      font-size: 0.75rem;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .skill-bar-bg {
-      background: rgba(128, 128, 128, 0.2);
-      height: 8px;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .skill-bar-fill {
-      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
-      height: 100%;
-      border-radius: 10px;
-      width: 0%;
-      transition: width 1s ease-in-out;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: var(--card-bg);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-      transition: all 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .project-img {
+    
+    /* Stories Container */
+    .locket-stories {
+      position: relative;
       width: 100%;
-      height: 180px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      padding: 0.8rem 0 1rem 0;
+      scrollbar-width: thin;
+      cursor: grab;
+      border-radius: 20px;
+    }
+    .locket-stories:active { cursor: grabbing; }
+    .locket-stories::-webkit-scrollbar { height: 4px; }
+    .locket-stories::-webkit-scrollbar-track { background: var(--border-light); border-radius: 10px; }
+    .locket-stories::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+    
+    .stories-wrapper {
+      display: inline-flex;
+      gap: 16px;
+      padding: 0.5rem 0.2rem;
+    }
+    .story-item {
+      flex: 0 0 auto;
+      width: 110px;
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer;
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .story-item:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 15px 30px -10px rgba(193, 123, 110, 0.4);
+    }
+    .story-item img {
+      width: 110px;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+      border-radius: 24px;
+      border: 2px solid var(--accent-light);
+      transition: all 0.3s;
+    }
+    .story-item:hover img {
+      border-color: var(--accent);
+    }
+    .story-delete {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
+      border-radius: 30px;
+      width: 26px;
+      height: 26px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3rem;
-      color: white;
-    }
-
-    .project-info {
-      padding: 1.5rem;
-    }
-
-    .project-category {
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .project-info h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-primary);
-    }
-
-    .project-info p {
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    .project-tech {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .project-tech span {
-      background: rgba(128, 128, 128, 0.1);
-      padding: 0.2rem 0.6rem;
-      border-radius: 20px;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .project-link:hover {
-      gap: 0.8rem;
-    }
-
-    .hobbies-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .hobby-card {
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 1.8rem;
-      text-align: center;
-      box-shadow: var(--card-shadow);
-      transition: all 0.3s ease;
       cursor: pointer;
-    }
-
-    .hobby-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .hobby-card i {
-      font-size: 2.5rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .hobby-card h4 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-primary);
-    }
-
-    .hobby-card p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
-      border-top: 1px solid rgba(128, 128, 128, 0.2);
-      color: var(--text-muted);
-      font-size: 0.8rem;
-    }
-
-    .toast {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: linear-gradient(135deg, #e88d9a, #7c9ecf);
       color: white;
-      padding: 10px 20px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      z-index: 1000;
-      transform: translateX(400px);
-      transition: transform 0.3s ease;
+      font-size: 11px;
+      opacity: 0;
+      transition: all 0.2s;
+      z-index: 2;
+    }
+    .story-item:hover .story-delete { opacity: 1; }
+    .story-delete:hover {
+      background: #ff4444;
+      transform: scale(1.1);
+    }
+    
+    /* Empty state yang cantik */
+    .empty-stories {
+      text-align: center;
+      padding: 2.5rem;
+      color: var(--text-muted);
+      font-style: italic;
+      width: 100%;
+      display: inline-block;
+      background: rgba(193, 123, 110, 0.05);
+      border-radius: 24px;
+      border: 1px dashed var(--border-light);
+    }
+    .empty-stories i {
+      font-size: 2.5rem;
+      color: var(--accent-light);
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    .empty-stories p {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+    }
+    
+    /* Hint / Info Panel */
+    .locket-info-panel {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      padding: 0.8rem;
+      background: rgba(193, 123, 110, 0.05);
+      border-radius: 60px;
+      flex-wrap: wrap;
+    }
+    .locket-info-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+    .locket-info-item i {
+      color: var(--accent);
+      font-size: 0.8rem;
     }
 
-    .toast.show {
-      transform: translateX(0);
+    /* Skills Modern Circle */
+    .skills-modern { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+    .skill-circle-card { text-align: center; padding: 0.8rem; }
+    .skill-circle { position: relative; width: 110px; height: 110px; margin: 0 auto 0.8rem; }
+    .skill-circle svg { width: 110px; height: 110px; transform: rotate(-90deg); }
+    .skill-circle circle { fill: none; stroke-width: 8; stroke-linecap: round; }
+    .skill-circle .bg-circle { stroke: var(--border-light); stroke-width: 8; }
+    .skill-circle .progress-circle { stroke: var(--accent); stroke-width: 8; stroke-dasharray: 314; stroke-dashoffset: 314; transition: stroke-dashoffset 1.2s ease-out; }
+    .skill-percent-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+    .skill-name-modern { font-size: 0.85rem; font-weight: 500; color: var(--text-primary); margin-top: 0.5rem; }
+
+    /* Page System */
+    .page-content { display: none; animation: fadeSlide 0.5s ease; }
+    .page-content.active { display: block; }
+    @keyframes fadeSlide { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    .section-title { font-size: 2.2rem; font-weight: 400; font-family: 'Cormorant Garamond', serif; margin-bottom: 2rem; text-align: center; }
+    .section-title i { color: var(--accent); margin-right: 0.6rem; }
+
+    /* About Page */
+    .about-hero { display: flex; flex-direction: column; align-items: center; margin-bottom: 2rem; }
+    .profile-img-wrapper-about { width: 200px; height: 200px; margin-bottom: 1rem; }
+    .profile-img-about { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-light); }
+    .about-social { display: flex; justify-content: center; gap: 0.8rem; margin: 1rem 0; flex-wrap: wrap; }
+    .about-social-icon { width: 38px; height: 38px; background: rgba(193,123,110,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.2s; color: var(--text-secondary); text-decoration: none; }
+    .about-social-icon:hover { background: var(--accent); color: white; transform: translateY(-3px); }
+    .about-content { background: var(--card-bg); backdrop-filter: blur(12px); border-radius: 32px; padding: 2rem; border: 1px solid var(--border-light); margin-bottom: 2rem; }
+    .about-text p { margin-bottom: 1rem; line-height: 1.7; color: var(--text-secondary); }
+    .quote { font-style: italic; border-left: 3px solid var(--accent); padding-left: 1.4rem; margin-top: 1rem; color: var(--accent-dark); font-family: 'Cormorant Garamond', serif; font-size: 1rem; }
+
+    /* Journey Card */
+    .journey-card { background: var(--card-bg); backdrop-filter: blur(12px); border-radius: 32px; padding: 2rem; border: 1px solid var(--border-light); margin-bottom: 2rem; }
+    .journey-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 500; margin-bottom: 1.8rem; display: flex; align-items: center; gap: 0.8rem; color: var(--accent); }
+    .journey-timeline { display: flex; flex-wrap: wrap; justify-content: space-between; position: relative; }
+    .journey-timeline::before { content: ''; position: absolute; top: 50px; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent-light), var(--accent), var(--accent-light)); transform: translateY(-50%); z-index: 0; }
+    .journey-step { flex: 1; min-width: 180px; text-align: center; position: relative; z-index: 1; padding: 0 0.5rem; }
+    .journey-icon { width: 60px; height: 60px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; box-shadow: 0 8px 20px rgba(193, 123, 110, 0.3); }
+    .journey-year { font-size: 0.7rem; color: var(--accent); font-weight: 600; margin-bottom: 0.3rem; }
+    .journey-title { font-weight: 700; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.2rem; }
+    .journey-desc { font-size: 0.7rem; color: var(--text-muted); }
+
+    /* Skills Card */
+    .skills-card { background: var(--card-bg); backdrop-filter: blur(12px); border-radius: 32px; padding: 2rem; border: 1px solid var(--border-light); margin-bottom: 2rem; }
+    .skills-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 500; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; color: var(--accent); }
+
+    /* Motto Center */
+    .motto-center {
+      background: linear-gradient(135deg, rgba(193, 123, 110, 0.1), rgba(203, 158, 114, 0.05));
+      backdrop-filter: blur(12px);
+      border-radius: 48px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      border: 1px solid var(--border-light);
+      position: relative;
+      overflow: hidden;
+    }
+    .motto-center::before {
+      content: '✦';
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 2rem;
+      color: var(--accent);
+      opacity: 0.3;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .motto-center::after {
+      content: '✦';
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: var(--accent);
+      opacity: 0.3;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .motto-text-center {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--accent);
+      letter-spacing: 1px;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .motto-author {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 2px;
     }
 
-    @media (max-width: 992px) {
-      .container { padding: 1.5rem; }
-      .hero h1 { font-size: 3rem; }
-    }
+    /* Projects Page */
+    .projects-header { text-align: center; margin-bottom: 2.5rem; }
+    .projects-subtitle { color: var(--text-muted); font-size: 0.9rem; max-width: 550px; margin: 0.5rem auto 0; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem; margin: 2rem 0; }
+    .project-card { background: var(--card-bg); backdrop-filter: blur(12px); border-radius: 28px; overflow: hidden; border: 1px solid var(--border-light); transition: all 0.4s; cursor: pointer; }
+    .project-card:hover { transform: translateY(-10px); box-shadow: 0 25px 40px -18px rgba(193, 123, 110, 0.4); border-color: var(--accent); }
+    .project-img { height: 210px; background: linear-gradient(145deg, var(--accent-light), var(--accent-dark)); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .project-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .project-card:hover .project-img img { transform: scale(1.05); }
+    .project-info { padding: 1.5rem; }
+    .project-category { display: inline-block; font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; background: rgba(193, 123, 110, 0.1); padding: 0.2rem 0.8rem; border-radius: 30px; }
+    .project-card h3 { font-size: 1.3rem; font-weight: 600; font-family: 'Cormorant Garamond', serif; margin-bottom: 0.6rem; }
+    .project-desc { font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1rem; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.2rem; }
+    .project-tech span { background: rgba(128, 128, 128, 0.08); padding: 0.25rem 0.8rem; border-radius: 30px; font-size: 0.7rem; }
+    .project-link { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; font-weight: 500; color: var(--accent); text-decoration: none; }
+    .project-link:hover { gap: 1rem; }
+    .projects-footer { text-align: center; margin-top: 2rem; padding: 1.5rem; background: var(--card-bg); backdrop-filter: blur(12px); border-radius: 32px; border: 1px solid var(--border-light); }
+
+    /* Interests Page */
+    .interests-header { text-align: center; margin-bottom: 2.5rem; }
+    .interests-subtitle { color: var(--text-muted); font-size: 0.9rem; max-width: 500px; margin: 0.5rem auto 0; }
+    .interests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.8rem; margin: 2rem 0; }
+    .interest-card { background: var(--card-bg); backdrop-filter: blur(12px); border-radius: 28px; padding: 1.8rem; text-align: center; border: 1px solid var(--border-light); transition: all 0.3s ease; cursor: pointer; }
+    .interest-card:hover { transform: translateY(-8px); border-color: var(--accent); box-shadow: 0 20px 35px -15px rgba(193, 123, 110, 0.3); }
+    .interest-icon { width: 70px; height: 70px; background: linear-gradient(135deg, var(--accent-light), var(--accent)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; transition: transform 0.3s ease; }
+    .interest-card:hover .interest-icon { transform: scale(1.1); }
+    .interest-icon i { font-size: 2rem; color: white; }
+    .interest-card h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .interest-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem; }
+    .interest-tag { display: inline-block; font-size: 0.7rem; color: var(--accent); background: rgba(193, 123, 110, 0.1); padding: 0.3rem 1rem; border-radius: 30px; transition: 0.2s; }
+    .interest-card:hover .interest-tag { background: var(--accent); color: white; }
+    .interests-quote { text-align: center; margin-top: 3rem; padding: 1.5rem; background: var(--card-bg); backdrop-filter: blur(12px); border-radius: 32px; border: 1px solid var(--border-light); }
+    .interests-quote p { font-style: italic; color: var(--accent); font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; }
+
+    /* Footer & Toast */
+    .footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light); font-size: 0.75rem; color: var(--text-muted); }
+    .toast { position: fixed; bottom: 20px; right: 20px; background: var(--accent); color: white; padding: 0.5rem 1rem; border-radius: 60px; font-size: 0.75rem; transform: translateX(400px); transition: 0.2s; z-index: 1000; }
+    .toast.show { transform: translateX(0); }
+
+    /* Lightbox */
+    .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 2000; visibility: hidden; opacity: 0; transition: 0.3s; cursor: pointer; }
+    .lightbox.active { visibility: visible; opacity: 1; }
+    .lightbox img { max-width: 90%; max-height: 85%; border-radius: 20px; object-fit: contain; }
+    .lightbox-close { position: absolute; top: 20px; right: 30px; font-size: 2rem; color: white; cursor: pointer; }
 
     @media (max-width: 768px) {
       .container { padding: 1rem; }
-      .navbar {
-        flex-direction: column;
-        border-radius: 30px;
-        padding: 1rem;
-      }
-      .nav-menu { justify-content: center; gap: 1.2rem; }
-      .nav-controls { justify-content: center; }
-      .hero { padding: 2rem 0; }
-      .hero h1 { font-size: 2.2rem; }
-      .hero-tagline { font-size: 1rem; }
-      .hero-desc { font-size: 0.9rem; }
-      .hero-badge { padding: 0.4rem 1.5rem; font-size: 0.8rem; }
-      .section-title { font-size: 1.5rem; }
-      .about-content { padding: 1.5rem; }
-      .info-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.8rem; }
+      .navbar { flex-direction: column; border-radius: 50px; }
+      .journey-timeline::before { display: none; }
+      .journey-step { margin-bottom: 1.5rem; }
+      .skill-circle { width: 80px; height: 80px; }
+      .skill-circle svg { width: 80px; height: 80px; }
+      .interests-grid { grid-template-columns: 1fr; }
       .projects-grid { grid-template-columns: 1fr; }
-      .hobbies-grid { grid-template-columns: 1fr; }
-      .about-social-icon { width: 38px; height: 38px; font-size: 1rem; }
-      .toast { bottom: 20px; right: 20px; left: 20px; transform: translateY(100px); text-align: center; }
-      .toast.show { transform: translateY(0); }
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 1.8rem; }
-      .hero-badge { padding: 0.3rem 1.2rem; font-size: 0.7rem; }
+      .story-item { width: 90px; }
+      .story-item img { width: 90px; height: 125px; }
+      .motto-text-center { font-size: 1.2rem; }
+      .locket-info-panel { gap: 1rem; }
+      .locket-info-item { font-size: 0.6rem; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="navbar" data-aos="fade-down">
-      <div class="logo"><i class="fas fa-star"></i> Azra.profil</div>
-      <div class="nav-menu" id="navMenu">
-        <a class="nav-link active" data-page="home" id="navHome">Beranda</a>
-        <a class="nav-link" data-page="about" id="navAbout">Tentang Saya</a>
-        <a class="nav-link" data-page="projects" id="navProjects">Proyek</a>
-        <a class="nav-link" data-page="interests" id="navInterests">Pilihanku</a>
-      </div>
-      <div class="nav-controls">
-        <button class="nav-btn" id="themeToggle"><i class="fas fa-moon"></i> <span id="themeText">Dark Mode</span></button>
-        <button class="nav-btn" id="langToggle"><i class="fas fa-globe"></i> <span id="langText">English</span></button>
-      </div>
+<div class="container">
+  <div class="navbar" data-aos="fade-down">
+    <div class="logo"><i class="fas fa-feather-alt"></i> Azra.studio</div>
+    <div class="nav-menu">
+      <a class="nav-link active" data-page="home">Beranda</a>
+      <a class="nav-link" data-page="about">Tentang</a>
+      <a class="nav-link" data-page="projects">Karya</a>
+      <a class="nav-link" data-page="interests">Inspirasi</a>
     </div>
-
-    <!-- HOME PAGE -->
-    <div id="homePage" class="page-content active">
-      <div class="hero" data-aos="fade-up">
-        <div class="hero-badge"> HI, I'M </div>
-        <h1>Azratul Al Zahra</h1>
-        <div class="hero-tagline" id="heroTagline"><i class="fas fa-heart"></i> Informatics Engineering Student</div>
-        <div class="hero-desc" id="heroDesc">Seorang mahasiswi Teknik Informatika dengan minat besar di bidang teknologi, seni, dan kreativitas.</div>
-        <button class="explore-btn" onclick="switchPage('about')" id="exploreBtn">Explore My Work ↓</button>
-      </div>
-    </div>
-
-    <!-- ABOUT PAGE -->
-    <div id="aboutPage" class="page-content">
-      <h2 class="section-title" id="aboutTitle"><i class="fas fa-user-astronaut"></i> Tentang Saya</h2>
-      
-      <div class="about-hero">
-        <div class="profile-img-wrapper-about floating">
-          <img src="img/azra.jpeg" alt="Azratul Al Zahra" class="profile-img-about" id="profileImgAbout">
-        </div>
-        
-        <div class="about-social">
-          <a href="https://instagram.com/azratulalzahra" target="_blank" class="about-social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="https://github.com/Azra-dev79" target="_blank" class="about-social-icon"><i class="fab fa-github"></i></a>
-          <a href="https://x.com/azratulalzahra" target="_blank" class="about-social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/azratul-al-zahra-a863bb401" target="_blank" class="about-social-icon"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://wa.me/6285189442158" target="_blank" class="about-social-icon"><i class="fab fa-whatsapp"></i></a>
-          <a href="mailto:azratulalzahra@gmail.com" class="about-social-icon"><i class="fas fa-envelope"></i></a>
-        </div>
-      </div>
-
-      <div class="about-content" data-aos="fade-up">
-        <div class="about-text">
-          <p id="aboutText1">Halo! Saya Azratul Al Zahra, seorang mahasiswi Teknik Informatika di Universitas Jabal Ghafur. Saya lahir di Malaysia pada 8 Mei 2006. Meskipun sekarang berkuliah di bidang IT, saya tetap memelihara keahlian pada dunia fashion dan desain.</p>
-          <p id="aboutText2">Saya percaya bahwa teknologi dan seni bisa berjalan beriringan dengan indah — menggabungkan logika kode dengan estetika desain. Di sela-sela coding, saya menyalurkan kreativitas saya melalui desain dan moodboard aesthetic, dan menjahit.</p>
-          <div class="quote" id="quoteText">"Memadukan estetika visual dengan logika teknologi — setiap karya adalah cerita yang ingin disampaikan."</div>
-        </div>
-      </div>
-
-      <div class="info-grid" data-aos="fade-up" data-aos-delay="100">
-        <div class="info-card">
-          <h3><i class="fas fa-graduation-cap"></i> <span id="educationTitle">Perjalanan Pendidikan</span></h3>
-          <div class="timeline-item">
-            <div class="timeline-title" id="sdTitle">SD Negeri 1 Bambi</div>
-            <div class="timeline-date">2012 - 2018</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-title" id="smpTitle">MTs Negeri 5 Pidie</div>
-            <div class="timeline-date">2018 - 2021</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-title" id="smkTitle">SMK Negeri 1 Sigli - Desain Fashion</div>
-            <div class="timeline-date">2021 - 2024</div>
-            <div class="timeline-desc" id="smkDesc">Jurusan Desain Fashion · pembuatan pola, ilustrasi busana, produksi garment</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-title" id="uniTitle">Universitas Jabal Ghafur (UNIGHA)</div>
-            <div class="timeline-date">2024 - sekarang | S1 Teknik Informatika</div>
-            <div class="timeline-desc" id="uniDesc">Fokus pada creative coding & interactive media</div>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <h3><i class="fas fa-cogs"></i> <span id="skillsTitle">Keahlian Saya</span></h3>
-          <div class="skills-container" id="skillsList"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROJECTS PAGE -->
-    <div id="projectsPage" class="page-content">
-      <h2 class="section-title" id="projectsTitle"><i class="fas fa-laptop-code"></i> Proyek Saya</h2>
-      <div class="projects-grid" id="projectsList"></div>
-    </div>
-
-    <!-- INTERESTS PAGE -->
-    <div id="interestsPage" class="page-content">
-      <h2 class="section-title" id="interestsTitle"><i class="fas fa-heart"></i> Pilihanku</h2>
-      <div class="hobbies-grid" id="interestsGrid"></div>
-    </div>
-
-    <div class="footer" data-aos="fade-up">
-      <p id="footerText">Berkarya dengan niat, berkembang seiring waktu — Azratul Al Zahra</p>
+    <div class="nav-controls">
+      <button class="nav-btn" id="themeToggle"><i class="fas fa-moon"></i> <span id="themeText">Gelap</span></button>
+      <button class="nav-btn" id="langToggle"><i class="fas fa-globe"></i> <span id="langText">English</span></button>
     </div>
   </div>
 
-  <div id="toast" class="toast">✨ Opening link...</div>
+  <!-- HOME PAGE -->
+  <div id="homePage" class="page-content active">
+    <div class="hero" data-aos="fade-up">
+      <div class="hero-badge"> ✦ WELCOME TO MY ATELIER ✦ </div>
+      <h1>Azratul Al Zahra</h1>
+      <div class="hero-tagline"><i class="fas fa-spa"></i> Informatics & Design Ethos</div>
+      <div class="hero-desc" id="heroDesc">Mahasiswi teknik informatika dengan jiwa seni. Menciptakan harmoni antara kode dan keindahan visual.</div>
+      <button class="explore-btn" onclick="switchPage('about')" id="exploreBtn">Jelajahi Karya ↓</button>
+    </div>
+    <div class="feature-grid" data-aos="fade-up">
+      <div class="feature-card"><i class="fas fa-code-branch"></i><h4>Creative Coding</h4><small>web & interaktif</small></div>
+      <div class="feature-card"><i class="fas fa-palette"></i><h4>Fashion DNA</h4><small>desain & pola</small></div>
+      <div class="feature-card"><i class="fas fa-mobile-alt"></i><h4>UI/UX Soul</h4><small>antarmuka elegan</small></div>
+      <div class="feature-card"><i class="fas fa-heart"></i><h4>Aesthetic Vibe</h4><small>mood & inspirasi</small></div>
+    </div>
+  </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, once: true, offset: 100 });
-
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      toast.textContent = message;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2000);
-    }
-
-    // Projects Data dengan imageUrl (bisa pakai foto)
-const projectsData = [
-  {
-    name: "VoltRide Aceh",
-    category: "WEB DEVELOPMENT",
-    descriptionId: "Platform transportasi online pertama di Aceh dengan kendaraan listrik. Membantu pengguna mencari layanan perjalanan dengan mudah melalui tampilan sederhana dan user‑friendly.",
-    descriptionEn: "The first online transportation platform in Aceh with electric vehicles. Helps users find travel services easily with a simple and user‑friendly interface.",
-    tech: ["Responsive Design", "UI/UX", "HTML, CSS, JS"],
-    demoUrl: "https://azra-dev79.github.io/VoltRide-Aceh/",
-   imageUrl: "img/voltride - Copy.jpeg"  // <-- Ganti dengan path foto Anda
-  },
-  {
-    name: "ThriftFit",
-    category: "WEB DEVELOPMENT",
-    descriptionId: "Platform digital fashion thrift yang menggabungkan marketplace, komunitas, dan inspirasi OOTD. Konsep visual yang fresh dan modern.",
-    descriptionEn: "A digital thrift fashion platform that combines marketplace, community, and OOTD inspiration. Fresh and modern visual concept.",
-    tech: ["Marketplace", "Community", "HTML, CSS, JS"],
-    demoUrl: "https://azra-dev79.github.io/thriftfit1/",
-    imageUrl: "img/logo_tf.png"  // <-- Ganti dengan path foto Anda
-  }
-];
-
-    // Interests Data
-    const interestsData = [
-  { 
-    icon: "fa-palette", 
-    titleId: "Desain Grafis", 
-    titleEn: "Graphic Design", 
-    descId: "Koleksi karya desain dan ilustrasi digital", 
-    descEn: "Collection of digital design and illustration works", 
-    link: "https://www.behance.net/search/projects/graphic%20design" 
-  },
-  { 
-    icon: "fa-tshirt", 
-    titleId: "Fashion & Styling", 
-    titleEn: "Fashion & Styling", 
-    descId: "Inspirasi tren fashion dan styling terkini", 
-    descEn: "Latest fashion trends and styling inspiration", 
-    link: "https://www.pinterest.com/search/pins/?q=fashion%20style%20inspiration" 
-  },
-  { 
-    icon: "fa-headphones", 
-    titleId: "K-pop & Indie Music", 
-    titleEn: "K-pop & Indie Music", 
-    descId: "Playlist musik favorit untuk menemani harimu", 
-    descEn: "Favorite music playlist to accompany your day", 
-    link: "https://open.spotify.com/playlist/37i9dQZF1E8KS9AMpWKcZt" 
-  },
-  { 
-    icon: "fa-mobile-alt", 
-    titleId: "UI/UX Design", 
-    titleEn: "UI/UX Design", 
-    descId: "Inspirasi desain antarmuka modern", 
-    descEn: "Modern interface design inspiration", 
-    link: "https://dribbble.com/tags/ui_design" 
-  },
-  { 
-    icon: "fa-language", 
-    titleId: "Bahasa Korea, Jepang, Inggris", 
-    titleEn: "Korean, Japanese, English", 
-    descId: "Tutorial belajar bahasa asing", 
-    descEn: "Foreign language learning tutorials", 
-    link: "https://youtube.com/playlist?list=PLpt3EnQbQGHajBZUw8fgeqX7amk29UB3K&si=_gnHJ6WosZMTznt3" 
-  },
-  { 
-    icon: "fa-pen-fancy", 
-    titleId: "Estetik & Desain Visual", 
-    titleEn: "Aesthetic & Visual Design", 
-    descId: "Inspirasi catatan estetik dan desain visual", 
-    descEn: "Aesthetic notes and visual design inspiration", 
-    link: "https://id.pinterest.com/search/pins/?q=Aesthetic%20%26%20designs%20visual" 
-  }
-];
-
-
-    // Skills Data
-    const skillsData = {
-      id: [
-        { name: "Desain Grafis", percent: 75, icon: "fa-palette" },
-        { name: "Fashion Design", percent: 80, icon: "fa-tshirt" },
-        { name: "Menjahit & Pattern Making", percent: 90, icon: "fa-cut" },
-        { name: "UI/UX Design", percent: 75, icon: "fa-mobile-alt" },
-        { name: "Microsoft Office", percent: 85, icon: "fa-file-alt" },
-      ],
-      en: [
-        { name: "Graphic Design", percent: 75, icon: "fa-palette" },
-        { name: "Fashion Design", percent: 80, icon: "fa-tshirt" },
-        { name: "Sewing & Pattern Making", percent: 90, icon: "fa-cut" },
-        { name: "UI/UX Design", percent: 75, icon: "fa-mobile-alt" },
-        { name: "Microsoft Office", percent: 85, icon: "fa-file-alt" },
-      ]
-    };
-
-    const navData = {
-      id: { home: "Beranda", about: "Tentang Saya", projects: "Proyek", interests: "Pilihanku" },
-      en: { home: "Home", about: "About Me", projects: "Projects", interests: "My Picks" }
-    };
-
-    function buildProjectsList(lang) {
-  const container = document.getElementById('projectsList');
-  container.innerHTML = '';
-  
-  projectsData.forEach(project => {
-    const description = lang === 'id' ? project.descriptionId : project.descriptionEn;
-    const card = document.createElement('div');
-    card.className = 'project-card';
-    
-    // Cek apakah ada imageUrl, jika ada pakai gambar, jika tidak pakai icon default
-    const previewContent = project.imageUrl 
-      ? `<img src="${project.imageUrl}" alt="${project.name}" style="width:100%; height:100%; object-fit:cover;">`
-      : `<i class="fas fa-code" style="font-size: 3rem; color: white;"></i>`;
-    
-    card.innerHTML = `
-      <div class="project-img">
-        ${previewContent}
+  <!-- ABOUT PAGE -->
+  <div id="aboutPage" class="page-content">
+    <h2 class="section-title" id="aboutTitle"><i class="fas fa-fan"></i> Tentang Saya</h2>
+    <div class="about-hero">
+      <div class="profile-img-wrapper-about floating">
+        <img src="img/azra.jpeg" alt="Azratul Al Zahra" class="profile-img-about" id="profileImgAbout" onerror="this.src='https://placehold.co/400x400/fefaf6/c17b6e?text=AZRA'">
       </div>
-      <div class="project-info">
-        <div class="project-category">${project.category}</div>
-        <h3>${project.name}</h3>
-        <p>${description}</p>
-        <div class="project-tech">
-          ${project.tech.map(t => `<span>${t}</span>`).join('')}
+      <div class="about-social">
+        <a href="https://instagram.com/azratulalzahra" target="_blank" class="about-social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/Azra-dev79" target="_blank" class="about-social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://x.com/azratulalzahra" target="_blank" class="about-social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/azratul-al-zahra-a863bb401" target="_blank" class="about-social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/6285189442158" target="_blank" class="about-social-icon"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:azratulalzahra@gmail.com" class="about-social-icon"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="about-content" data-aos="fade-up">
+      <div class="about-text">
+        <p id="aboutText1">Halo! Saya Azratul Al Zahra, lahir di Malaysia 8 Mei 2006. Saat ini menempuh S1 Teknik Informatika di Universitas Jabal Ghafur. Saya menikmati persimpangan antara teknologi dan fashion — di mana kode bertemu estetika.</p>
+        <p id="aboutText2">Pernah menekuni Desain Fashion di SMK, saya membawa perspektif visual yang khas ke dunia pengembangan web. Desain antarmuka, ilustrasi, hingga menjahit adalah caraku berkarya.</p>
+        <div class="quote" id="quoteText">"Di antara algoritma dan kain, aku temukan kebebasan berkarya."</div>
+      </div>
+    </div>
+    <div class="journey-card" data-aos="fade-up">
+      <h3><i class="fas fa-road"></i> <span id="educationTitle">Perjalanan Hidup</span></h3>
+      <div class="journey-timeline">
+        <div class="journey-step"><div class="journey-icon"><i class="fas fa-school"></i></div><div class="journey-year">2012-2018</div><div class="journey-title" id="sdTitle">SD Negeri 1 Bambi</div><div class="journey-desc">Dasar pendidikan</div></div>
+        <div class="journey-step"><div class="journey-icon"><i class="fas fa-graduation-cap"></i></div><div class="journey-year">2018-2021</div><div class="journey-title" id="smpTitle">MTs Negeri 5 Pidie</div><div class="journey-desc">Pengembangan diri</div></div>
+        <div class="journey-step"><div class="journey-icon"><i class="fas fa-tshirt"></i></div><div class="journey-year">2021-2024</div><div class="journey-title" id="smkTitle">SMK Desain Fashion</div><div class="journey-desc" id="smkDesc">Pola, ilustrasi, garment</div></div>
+        <div class="journey-step"><div class="journey-icon"><i class="fas fa-laptop-code"></i></div><div class="journey-year">2024-Sekarang</div><div class="journey-title" id="uniTitle">S1 Teknik Informatika</div><div class="journey-desc" id="uniDesc">Creative coding & UI/UX</div></div>
+      </div>
+    </div>
+    <div class="skills-card" data-aos="fade-up">
+      <h3><i class="fas fa-chart-simple"></i> <span id="skillsTitle">Kemampuan & Tools</span></h3>
+      <div class="skills-modern" id="skillsModernList"></div>
+    </div>
+    
+    <!-- MOTTO HIDUP - DITENGAH -->
+    <div class="motto-center" data-aos="fade-up">
+      <div class="motto-text-center" id="mottoText">"Berkarya dengan hati, berkembang bersama waktu."</div>
+      <div class="motto-author">— Azratul Al Zahra —</div>
+    </div>
+
+    <!-- LOCKET GALLERY - DIPERBAGUS -->
+    <div class="locket-fullwidth" data-aos="fade-up">
+      <h3><i class="fas fa-film"></i> Locket Gallery ✨</h3>
+      <div class="locket-header">
+        <div class="locket-info-item" style="background: none; padding: 0;">
+          <i class="fas fa-camera-retro"></i>
+          <span>Koleksi kenangan visual</span>
         </div>
-        <a href="${project.demoUrl}" target="_blank" class="project-link">${lang === 'id' ? 'Lihat Proyek →' : 'View Project →'}</a>
+        <div>
+          <input type="file" id="locketFileInputAbout" accept="image/*" multiple style="display:none;">
+          <button class="upload-locket-btn" id="uploadLocketBtnAbout">
+            <i class="fas fa-plus-circle"></i> Tambah foto
+          </button>
+        </div>
       </div>
-    `;
-    container.appendChild(card);
-  });
-}
-
-    function buildInterestsGrid(lang) {
-      const container = document.getElementById('interestsGrid');
-      container.innerHTML = '';
-      
-      interestsData.forEach(interest => {
-        const title = lang === 'id' ? interest.titleId : interest.titleEn;
-        const desc = lang === 'id' ? interest.descId : interest.descEn;
-        const card = document.createElement('div');
-        card.className = 'hobby-card';
-        card.onclick = () => {
-          showToast(`✨ ${lang === 'id' ? 'Membuka' : 'Opening'} ${title}...`);
-          window.open(interest.link, '_blank');
-        };
-        card.innerHTML = `
-          <i class="fas ${interest.icon}"></i>
-          <h4>${title}</h4>
-          <p>${desc}</p>
-          <span style="font-size:0.7rem; color:var(--accent);">${lang === 'id' ? 'Lihat →' : 'View →'}</span>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    function updateSkills(lang) {
-      const skillsList = document.getElementById('skillsList');
-      skillsList.innerHTML = '';
-      
-      skillsData[lang].forEach(skill => {
-        const skillDiv = document.createElement('div');
-        skillDiv.className = 'skill-item';
-        skillDiv.innerHTML = `
-          <div class="skill-info">
-            <span class="skill-name"><i class="fas ${skill.icon}"></i> ${skill.name}</span>
-            <span class="skill-percent">${skill.percent}%</span>
+      <div class="locket-stories" id="locketStoriesAbout">
+        <div class="stories-wrapper" id="storiesWrapperAbout">
+          <div class="empty-stories">
+            <i class="fas fa-camera"></i>
+            <p>✨ Belum ada foto ✨</p>
+            <p style="font-size: 0.7rem;">Klik "Tambah foto" untuk mengisi galeri</p>
           </div>
-          <div class="skill-bar-bg">
-            <div class="skill-bar-fill" style="width: ${skill.percent}%"></div>
-          </div>
-        `;
-        skillsList.appendChild(skillDiv);
-      });
-    }
+        </div>
+      </div>
+      <div class="locket-info-panel">
+        <div class="locket-info-item"><i class="fas fa-arrow-right"></i> Geser untuk lihat semua</div>
+        <div class="locket-info-item"><i class="fas fa-expand-alt"></i> Klik foto untuk perbesar</div>
+        <div class="locket-info-item"><i class="fas fa-trash-alt"></i> Hover lalu klik ✖ untuk hapus</div>
+      </div>
+    </div>
+  </div>
 
-    function updateNavMenu(lang) {
-      const nav = navData[lang];
-      document.getElementById('navHome').textContent = nav.home;
-      document.getElementById('navAbout').textContent = nav.about;
-      document.getElementById('navProjects').textContent = nav.projects;
-      document.getElementById('navInterests').textContent = nav.interests;
-    }
+  <!-- PROJECTS PAGE -->
+  <div id="projectsPage" class="page-content">
+    <div class="projects-header">
+      <h2 class="section-title" id="projectsTitle"><i class="fas fa-laptop-code"></i> Portofolio Digital</h2>
+      <p class="projects-subtitle" id="projectsSubtitle">Beberapa proyek yang telah saya kerjakan — dari konsep hingga realisasi</p>
+    </div>
+    <div class="projects-grid" id="projectsList"></div>
+    <div class="projects-footer"><p>✨ "Setiap proyek adalah cerita baru yang ingin disampaikan." ✨</p></div>
+  </div>
 
-    // Dark Mode
-    let isDark = localStorage.getItem('darkMode') === 'true';
-    const themeToggle = document.getElementById('themeToggle');
-    const themeTextSpan = document.getElementById('themeText');
-    
-    function applyTheme() {
-      if (isDark) {
-        document.body.classList.add('dark');
-        themeTextSpan.innerText = 'Light Mode';
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
-      } else {
-        document.body.classList.remove('dark');
-        themeTextSpan.innerText = 'Dark Mode';
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
-      }
+  <!-- INTERESTS PAGE -->
+  <div id="interestsPage" class="page-content">
+    <div class="interests-header">
+      <h2 class="section-title" id="interestsTitle"><i class="fas fa-star-of-life"></i> Ruang Inspirasi</h2>
+      <p class="interests-subtitle" id="interestsSubtitle">Hal-hal yang menginspirasi hari-hariku — dari musik hingga desain</p>
+    </div>
+    <div class="interests-grid" id="interestsGrid"></div>
+    <div class="interests-quote"><p>✨ "Inspirasi datang dari hal-hal kecil yang kita cintai." ✨</p></div>
+  </div>
+
+  <div class="footer"><p id="footerText">© Azratul Al Zahra — crafted with intention & aesthetic sensibility</p></div>
+</div>
+
+<div id="toast" class="toast">✨ siap</div>
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img id="lightboxImg" src="" alt="preview">
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true });
+  function showToast(msg) { let t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),1800); }
+  
+  function openLightbox(imgSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    lightboxImg.src = imgSrc;
+    lightbox.classList.add('active');
+  }
+  function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+  
+  // LOCKET GALLERY
+  let locketImages = JSON.parse(localStorage.getItem('azra_locket_gallery')) || [];
+  
+  function renderLocketGallery() {
+    const wrapper = document.getElementById('storiesWrapperAbout');
+    if (!wrapper) return;
+    wrapper.innerHTML = '';
+    if(locketImages.length === 0){
+      const emptyDiv = document.createElement('div');
+      emptyDiv.className = 'empty-stories';
+      emptyDiv.innerHTML = '<i class="fas fa-camera"></i><p>✨ Belum ada foto ✨</p><p style="font-size: 0.7rem;">Klik "Tambah foto" untuk mengisi galeri</p>';
+      wrapper.appendChild(emptyDiv);
+      return;
     }
-    applyTheme();
-    themeToggle.addEventListener('click', () => {
-      isDark = !isDark;
-      localStorage.setItem('darkMode', isDark);
-      applyTheme();
+    locketImages.forEach((imgSrc, idx) => {
+      const storyDiv = document.createElement('div');
+      storyDiv.className = 'story-item';
+      storyDiv.innerHTML = `<img src="${imgSrc}" alt="locket memory"><div class="story-delete" data-index="${idx}"><i class="fas fa-times-circle"></i></div>`;
+      storyDiv.querySelector('img').addEventListener('click', (e) => { e.stopPropagation(); openLightbox(imgSrc); });
+      wrapper.appendChild(storyDiv);
     });
-
-    // Bilingual Content
-    const content = {
-      id: {
-        heroTagline: '<i class="fas fa-heart"></i> Mahasiswi Teknik Informatika',
-        heroDesc: 'Seorang mahasiswi Teknik Informatika dengan minat besar di bidang teknologi, seni, dan kreativitas.',
-        exploreBtn: 'Explore My Work ↓',
-        aboutTitle: '<i class="fas fa-user-astronaut"></i> Tentang Saya',
-        aboutText1: 'Halo! Saya Azratul Al Zahra, seorang mahasiswi Teknik Informatika di Universitas Jabal Ghafur. Saya lahir di Malaysia pada 8 Mei 2006. Meskipun sekarang berkuliah di bidang IT, saya tetap memelihara kecintaan pada dunia fashion dan desain.',
-        aboutText2: 'Saya percaya bahwa teknologi dan seni bisa berjalan beriringan dengan indah — menggabungkan logika kode dengan estetika desain. Di sela-sela coding, saya menyalurkan kreativitas saya melalui desain grafis, ilustrasi digital, dan menjahit.',
-        quoteText: '"Memadukan estetika visual dengan logika teknologi — setiap karya adalah cerita yang ingin disampaikan."',
-        educationTitle: 'Perjalanan Pendidikan',
-        sdTitle: 'SD Negeri 1 Bambi',
-        smpTitle: 'MTs Negeri 5 Pidie',
-        smkTitle: 'SMK Negeri 1 Sigli - Desain Fashion',
-        smkDesc: 'Jurusan Desain Fashion · pembuatan pola, ilustrasi busana, produksi garment',
-        uniTitle: 'Universitas Jabal Ghafur (UNIGHA)',
-        uniDesc: 'Fokus pada creative coding & interactive media',
-        skillsTitle: 'Keahlian Saya',
-        projectsTitle: '<i class="fas fa-laptop-code"></i> Proyek Saya',
-        interestsTitle: '<i class="fas fa-heart"></i> Pilihanku',
-        footerText: 'Berkarya dengan niat, berkembang seiring waktu — Azratul Al Zahra'
-      },
-      en: {
-        heroTagline: '<i class="fas fa-heart"></i> Informatics Engineering Student',
-        heroDesc: 'An Informatics Engineering student,with a strong interest in technology, art, and creativity.',
-        exploreBtn: 'Explore My Work ↓',
-        aboutTitle: '<i class="fas fa-user-astronaut"></i> About Me',
-        aboutText1: 'Hello! I am Azratul Al Zahra, an Informatics Engineering student at Jabal Ghafur University. I was born in Malaysia on May 8, 2006. Although I am now studying IT, I still maintain my love for fashion and design.',
-        aboutText2: 'I believe that technology and art can go hand in hand beautifully — combining code logic with design aesthetics. In between coding, I channel my creativity through graphic design, digital illustration, and sewing.',
-        quoteText: '"Combining visual aesthetics with technology logic — every work is a story to tell."',
-        educationTitle: 'Education Journey',
-        sdTitle: 'SD Negeri 1 Bambi',
-        smpTitle: 'MTs Negeri 5 Pidie',
-        smkTitle: 'SMK Negeri 1 Sigli - Fashion Design',
-        smkDesc: 'Fashion Design major · pattern making, fashion illustration, garment production',
-        uniTitle: 'Jabal Ghafur University (UNIGHA)',
-        uniDesc: 'Focus on creative coding & interactive media',
-        skillsTitle: 'My Skills',
-        projectsTitle: '<i class="fas fa-laptop-code"></i> My Projects',
-        interestsTitle: '<i class="fas fa-heart"></i> My Picks',
-        footerText: 'Create with intention, grow with time — Azratul Al Zahra'
-      }
-    };
-
-    // Page Navigation
-    const navLinks = document.querySelectorAll('.nav-link');
-    const pages = {
-      home: document.getElementById('homePage'),
-      about: document.getElementById('aboutPage'),
-      projects: document.getElementById('projectsPage'),
-      interests: document.getElementById('interestsPage')
-    };
-
-    function switchPage(pageId) {
-      Object.keys(pages).forEach(key => {
-        pages[key].classList.remove('active');
-      });
-      pages[pageId].classList.add('active');
-      
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.dataset.page === pageId) {
-          link.classList.add('active');
+    document.querySelectorAll('#storiesWrapperAbout .story-delete').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const index = parseInt(el.getAttribute('data-index'));
+        if(!isNaN(index)){
+          locketImages.splice(index,1);
+          localStorage.setItem('azra_locket_gallery', JSON.stringify(locketImages));
+          renderLocketGallery();
+          showToast('🗑️ Foto dihapus dari galeri');
         }
       });
-      
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        const pageId = link.dataset.page;
-        if (pageId) switchPage(pageId);
-      });
     });
-
-    window.switchPage = switchPage;
-
-    let currentLang = localStorage.getItem('language') || 'id';
-    const langToggle = document.getElementById('langToggle');
-    const langTextSpan = document.getElementById('langText');
-
-    function applyLanguage(lang) {
-      const t = content[lang];
-      
-      updateNavMenu(lang);
-      document.getElementById('heroTagline').innerHTML = t.heroTagline;
-      document.getElementById('heroDesc').innerHTML = t.heroDesc;
-      document.getElementById('exploreBtn').innerHTML = t.exploreBtn;
-      document.getElementById('aboutTitle').innerHTML = t.aboutTitle;
-      document.getElementById('aboutText1').innerHTML = t.aboutText1;
-      document.getElementById('aboutText2').innerHTML = t.aboutText2;
-      document.getElementById('quoteText').innerHTML = t.quoteText;
-      document.getElementById('educationTitle').innerHTML = t.educationTitle;
-      document.getElementById('sdTitle').innerHTML = t.sdTitle;
-      document.getElementById('smpTitle').innerHTML = t.smpTitle;
-      document.getElementById('smkTitle').innerHTML = t.smkTitle;
-      document.getElementById('smkDesc').innerHTML = t.smkDesc;
-      document.getElementById('uniTitle').innerHTML = t.uniTitle;
-      document.getElementById('uniDesc').innerHTML = t.uniDesc;
-      document.getElementById('skillsTitle').innerHTML = t.skillsTitle;
-      document.getElementById('projectsTitle').innerHTML = t.projectsTitle;
-      document.getElementById('interestsTitle').innerHTML = t.interestsTitle;
-      document.getElementById('footerText').innerHTML = t.footerText;
-      
-      updateSkills(lang);
-      buildProjectsList(lang);
-      buildInterestsGrid(lang);
-      
-      langTextSpan.innerText = lang === 'id' ? 'English' : 'Indonesia';
-      langToggle.innerHTML = lang === 'id' ? '<i class="fas fa-globe"></i> English' : '<i class="fas fa-globe"></i> Indonesia';
-    }
-
-    applyLanguage(currentLang);
-    langToggle.addEventListener('click', () => {
-      currentLang = currentLang === 'id' ? 'en' : 'id';
-      localStorage.setItem('language', currentLang);
-      applyLanguage(currentLang);
+  }
+  
+  function addImagesToLocket(files) {
+    if(!files.length) return;
+    Array.from(files).forEach(file => {
+      if(file.type.startsWith('image/')){
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          locketImages.push(ev.target.result);
+          localStorage.setItem('azra_locket_gallery', JSON.stringify(locketImages));
+          renderLocketGallery();
+          showToast(`📸 +1 foto ditambahkan ke Locket`);
+        };
+        reader.readAsDataURL(file);
+      } else { showToast('Hanya file gambar'); }
     });
-  </script>
+  }
+  
+  document.getElementById('uploadLocketBtnAbout')?.addEventListener('click', () => { document.getElementById('locketFileInputAbout').click(); });
+  document.getElementById('locketFileInputAbout')?.addEventListener('change', (e) => { if(e.target.files.length) addImagesToLocket(e.target.files); e.target.value = ''; });
+  
+  // SKILLS MODERN
+  function buildSkillsModern(lang) {
+    const container = document.getElementById('skillsModernList');
+    if(!container) return;
+    const skills = lang === 'id' ? 
+      [{ name: "Desain Grafis", percent: 78 }, { name: "Fashion Design", percent: 82 }, { name: "Menjahit & Pola", percent: 88 }, { name: "UI/UX Design", percent: 76 }, { name: "Microsoft Office", percent: 87 }] :
+      [{ name: "Graphic Design", percent: 78 }, { name: "Fashion Design", percent: 82 }, { name: "Sewing & Pattern", percent: 88 }, { name: "UI/UX Design", percent: 76 }, { name: "Microsoft Office", percent: 87 }];
+    container.innerHTML = '';
+    skills.forEach(skill => {
+      const circumference = 314;
+      const offset = circumference - (skill.percent / 100) * circumference;
+      const card = document.createElement('div'); card.className = 'skill-circle-card';
+      card.innerHTML = `<div class="skill-circle"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" class="bg-circle" fill="none" stroke-width="8"/><circle cx="60" cy="60" r="50" class="progress-circle" fill="none" stroke-width="8" stroke-dasharray="${circumference}" stroke-dashoffset="${circumference}" style="stroke-dashoffset: ${offset};"/></svg><div class="skill-percent-text">${skill.percent}%</div></div><div class="skill-name-modern">${skill.name}</div>`;
+      container.appendChild(card);
+    });
+  }
+  
+  // PROJECTS & INTERESTS DATA
+  const projectsData = [
+    { name: "VoltRide Aceh", category: "WEB INNOVATION", descriptionId: "Platform transportasi listrik pertama di Aceh. Antarmuka modern, ramah pengguna.", descriptionEn: "First electric vehicle transportation platform in Aceh. Modern, user-friendly interface.", tech: ["Responsive", "UI/UX", "HTML/CSS/JS"], demoUrl: "https://azra-dev79.github.io/VoltRide-Aceh/", imageUrl: "img/logovr.png" },
+    { name: "ThriftFit", category: "DIGITAL FASHION", descriptionId: "Ekosistem thrift fashion modern. Marketplace dan komunitas OOTD.", descriptionEn: "Modern thrift fashion ecosystem. Marketplace and OOTD community.", tech: ["Marketplace", "Community", "Frontend"], demoUrl: "https://azra-dev79.github.io/thriftfit1/", imageUrl: "img/logo_tf.png" },
+    { name: "Review Product", category: "INTERACTIVE WEB", descriptionId: "Platform rating dan review produk dengan admin dashboard.", descriptionEn: "Product rating & review platform with admin dashboard.", tech: ["Bootstrap", "Apps Script", "JS"], demoUrl: "https://azra-dev79.github.io/ReviewProduct/", imageUrl: "img/logorp2.png" }
+  ];
+  
+  const interestsData = [
+    { icon: "fa-palette", titleId: "Desain Visual", titleEn: "Visual Design", descId: "Moodboard, ilustrasi, tipografi", descEn: "Moodboard, illustration, typography", link: "https://www.behance.net/", color: "#e8a598" },
+    { icon: "fa-tshirt", titleId: "Fashion Art", titleEn: "Fashion Art", descId: "Tren styling, pola busana", descEn: "Styling trends, garment patterns", link: "https://www.pinterest.com/", color: "#c9b4a5" },
+    { icon: "fa-headphones", titleId: "Indie & K-pop", titleEn: "Indie & K-pop", descId: "Playlist untuk menemani hari", descEn: "Playlist to accompany your day", link: "https://open.spotify.com/", color: "#b8a9c9" },
+    { icon: "fa-mobile-alt", titleId: "UI/UX Lab", titleEn: "UI/UX Lab", descId: "Inspirasi antarmuka modern", descEn: "Modern interface inspiration", link: "https://dribbble.com/", color: "#9fc5e8" },
+    { icon: "fa-language", titleId: "Bahasa Asing", titleEn: "Languages", descId: "Korea, Jepang, Inggris", descEn: "Korean, Japanese, English", link: "https://www.duolingo.com/", color: "#b5a0c9" },
+    { icon: "fa-pen-fancy", titleId: "Estetik", titleEn: "Aesthetic", descId: "Catatan visual & desain", descEn: "Visual notes & design", link: "https://www.pinterest.com/", color: "#e2b4aa" }
+  ];
+  
+  function buildProjectsList(lang){
+    const container = document.getElementById('projectsList');
+    if(!container) return;
+    container.innerHTML='';
+    const subtitle = document.getElementById('projectsSubtitle');
+    if(subtitle) subtitle.innerText = lang === 'id' ? 'Beberapa proyek yang telah saya kerjakan — dari konsep hingga realisasi' : 'Some projects I have worked on — from concept to realization';
+    projectsData.forEach(p=>{
+      const desc = lang==='id'?p.descriptionId:p.descriptionEn;
+      const card = document.createElement('div'); card.className='project-card';
+      card.innerHTML = `<div class="project-img">${p.imageUrl?`<img src="${p.imageUrl}" alt="${p.name}">`:'<i class="fas fa-code" style="font-size:3rem; color:white;"></i>'}</div><div class="project-info"><span class="project-category">${p.category}</span><h3>${p.name}</h3><div class="project-desc">${desc}</div><div class="project-tech">${p.tech.map(t=>`<span>${t}</span>`).join('')}</div><a href="${p.demoUrl}" target="_blank" class="project-link">${lang==='id'?'Lihat Proyek →':'View Project →'}</a></div>`;
+      container.appendChild(card);
+    });
+  }
+  
+  function buildInterestsGrid(lang){
+    const container = document.getElementById('interestsGrid');
+    if(!container) return;
+    container.innerHTML='';
+    const subtitle = document.getElementById('interestsSubtitle');
+    if(subtitle) subtitle.innerText = lang === 'id' ? 'Hal-hal yang menginspirasi hari-hariku — dari musik hingga desain' : 'Things that inspire my days — from music to design';
+    interestsData.forEach(i=>{
+      const title = lang==='id'?i.titleId:i.titleEn;
+      const desc = lang==='id'?i.descId:i.descEn;
+      const card = document.createElement('div'); card.className = 'interest-card';
+      card.onclick = () => { showToast(`✨ ${title}`); window.open(i.link,'_blank'); };
+      card.innerHTML = `<div class="interest-icon" style="background: linear-gradient(135deg, ${i.color}, var(--accent));"><i class="fas ${i.icon}"></i></div><h3>${title}</h3><div class="interest-desc">${desc}</div><span class="interest-tag">✨ jelajahi →</span>`;
+      container.appendChild(card);
+    });
+  }
+  
+  // LANGUAGE & THEME
+  let currentLang = localStorage.getItem('language') || 'id';
+  let isDark = localStorage.getItem('darkMode') === 'true';
+  const texts = {
+    id: { 
+      heroDesc: 'Mahasiswi teknik informatika dengan jiwa seni. Menciptakan harmoni antara kode dan keindahan visual.',
+      aboutTitle: 'Tentang Saya',
+      aboutText1: 'Halo! Saya Azratul Al Zahra, lahir di Malaysia 8 Mei 2006. Saat ini menempuh S1 Teknik Informatika di Universitas Jabal Ghafur. Saya menikmati persimpangan antara teknologi dan fashion — di mana kode bertemu estetika.',
+      aboutText2: 'Pernah menekuni Desain Fashion di SMK, saya membawa perspektif visual yang khas ke dunia pengembangan web. Desain antarmuka, ilustrasi, hingga menjahit adalah caraku berkarya.',
+      quoteText: '"Di antara algoritma dan kain, aku temukan kebebasan berkarya."',
+      educationTitle: 'Perjalanan Hidup',
+      sdTitle: 'SD Negeri 1 Bambi',
+      smpTitle: 'MTs Negeri 5 Pidie',
+      smkTitle: 'SMK Desain Fashion',
+      smkDesc: 'Pola, ilustrasi, garment',
+      uniTitle: 'S1 Teknik Informatika',
+      uniDesc: 'Creative coding & UI/UX',
+      skillsTitle: 'Kemampuan & Tools',
+      projectsTitle: 'Portofolio Digital',
+      interestsTitle: 'Ruang Inspirasi',
+      mottoText: '"Berkarya dengan hati, berkembang bersama waktu."',
+      footerText: '© Azratul Al Zahra — crafted with intention & aesthetic sensibility'
+    },
+    en: { 
+      heroDesc: 'Informatics student with an artistic soul. Creating harmony between code and visual beauty.',
+      aboutTitle: 'About Me',
+      aboutText1: 'Hello! I am Azratul Al Zahra, born in Malaysia on May 8, 2006. Currently studying Informatics Engineering at Jabal Ghafur University. I enjoy the intersection of technology and fashion — where code meets aesthetics.',
+      aboutText2: 'Having studied Fashion Design in vocational school, I bring a unique visual perspective to web development. Interface design, illustration, and sewing are my ways of creating.',
+      quoteText: '"Between algorithms and fabric, I find freedom to create."',
+      educationTitle: 'Life Journey',
+      sdTitle: 'SD Negeri 1 Bambi',
+      smpTitle: 'MTs Negeri 5 Pidie',
+      smkTitle: 'Fashion Design SMK',
+      smkDesc: 'Pattern, illustration, garment',
+      uniTitle: 'Informatics Engineering',
+      uniDesc: 'Creative coding & UI/UX',
+      skillsTitle: 'Skills & Tools',
+      projectsTitle: 'Digital Portfolio',
+      interestsTitle: 'Inspiration Space',
+      mottoText: '"Create with heart, grow with time."',
+      footerText: '© Azratul Al Zahra — crafted with intention & aesthetic sensibility'
+    }
+  };
+  
+  function applyLanguage(lang){
+    const t = texts[lang];
+    document.getElementById('heroDesc').innerText = t.heroDesc;
+    document.getElementById('aboutTitle').innerHTML = `<i class="fas fa-fan"></i> ${t.aboutTitle}`;
+    document.getElementById('aboutText1').innerText = t.aboutText1;
+    document.getElementById('aboutText2').innerText = t.aboutText2;
+    document.getElementById('quoteText').innerText = t.quoteText;
+    document.getElementById('educationTitle').innerHTML = `<i class="fas fa-road"></i> ${t.educationTitle}`;
+    document.getElementById('sdTitle').innerText = t.sdTitle;
+    document.getElementById('smpTitle').innerText = t.smpTitle;
+    document.getElementById('smkTitle').innerText = t.smkTitle;
+    document.getElementById('smkDesc').innerText = t.smkDesc;
+    document.getElementById('uniTitle').innerText = t.uniTitle;
+    document.getElementById('uniDesc').innerText = t.uniDesc;
+    document.getElementById('skillsTitle').innerHTML = `<i class="fas fa-chart-simple"></i> ${t.skillsTitle}`;
+    document.getElementById('projectsTitle').innerHTML = `<i class="fas fa-laptop-code"></i> ${t.projectsTitle}`;
+    document.getElementById('interestsTitle').innerHTML = `<i class="fas fa-star-of-life"></i> ${t.interestsTitle}`;
+    document.getElementById('mottoText').innerText = t.mottoText;
+    document.getElementById('footerText').innerText = t.footerText;
+    buildSkillsModern(lang);
+    buildProjectsList(lang);
+    buildInterestsGrid(lang);
+    document.getElementById('langText').innerText = lang === 'id' ? 'English' : 'Indonesia';
+  }
+  
+  function applyTheme(){
+    if(isDark){ document.body.classList.add('dark'); document.getElementById('themeText').innerText='Terang'; document.getElementById('themeToggle').innerHTML='<i class="fas fa-sun"></i> Terang';}
+    else{ document.body.classList.remove('dark'); document.getElementById('themeText').innerText='Gelap'; document.getElementById('themeToggle').innerHTML='<i class="fas fa-moon"></i> Gelap';}
+  }
+  
+  document.getElementById('themeToggle').addEventListener('click',()=>{ isDark=!isDark; localStorage.setItem('darkMode',isDark); applyTheme(); });
+  document.getElementById('langToggle').addEventListener('click',()=>{ currentLang = currentLang==='id'?'en':'id'; localStorage.setItem('language',currentLang); applyLanguage(currentLang); });
+  
+  function switchPage(pageId){
+    document.querySelectorAll('.page-content').forEach(p=>p.classList.remove('active'));
+    document.getElementById(`${pageId}Page`).classList.add('active');
+    document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
+    document.querySelector(`.nav-link[data-page="${pageId}"]`).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  window.switchPage=switchPage;
+  document.querySelectorAll('.nav-link').forEach(link=>link.addEventListener('click',()=>switchPage(link.dataset.page)));
+  
+  applyTheme();
+  applyLanguage(currentLang);
+  renderLocketGallery();
+</script>
 </body>
 </html>
